@@ -45,7 +45,7 @@ public class NavigationServlet extends HttpServlet {
 			PetList deletePet = dao.searchForPetById(tempId);
 			dao.deletePet(deletePet);
 			} catch (NumberFormatException e) {
-				System.out.println("Please select an pet");
+				System.out.println("Please select a pet");
 			}
 			
 		}
