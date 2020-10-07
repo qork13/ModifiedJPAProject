@@ -17,7 +17,6 @@
 <td><input type="radio" name="id" value="${currentpet.id}"></td>
 <td>${currentpet.type}</td>
 <td>${currentpet.name}</td>
-<td>${currentpet.owner}</td>
 </tr>
 </c:forEach>
 </table>

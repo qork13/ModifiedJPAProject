@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "petlist")
+@Table(name = "pets")
 public class PetList {
 	
 	@Id
@@ -19,8 +19,7 @@ public class PetList {
 	private String type;
 	@Column(name="NAME")
 	private String name;
-	@Column(name="OWNER")
-	private String owner;
+	
 	
 	
 	//PetList no arg constructor
@@ -29,11 +28,11 @@ public class PetList {
 	}
 	
 	//PetList constructor taking in type, name and owner
-	public PetList(String type, String name, String owner) {
+	public PetList(String type, String name) {
 		super();
 		this.type = type;
 		this.name = name;
-		this.owner = owner;
+		
 	}
 	
 	
@@ -62,17 +61,16 @@ public class PetList {
 		this.name = name;
 	}
 
-	public String getOwner() {
-		return owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
 	
 	//Method to return the Type, Name and Owner to the program as a readable String
+	
 	public String returnPetDetails() {
-		return "Type: " + type + " Name: " + name + " Owner: " + owner;
+		return "Type: " + type + " Name: " + name;
+	}
+
+	@Override
+	public String toString() {
+		return "PetList [id=" + id + ", type=" + type + ", name=" + name + "]";
 	}
 
 }

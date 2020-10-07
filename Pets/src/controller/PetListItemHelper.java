@@ -42,7 +42,7 @@ public class PetListItemHelper {
 		
 		typedQuery.setParameter("selectedType", toDelete.getType());
 		typedQuery.setParameter("selectedName", toDelete.getName());
-		typedQuery.setParameter("selectedOwner", toDelete.getOwner());
+		
 		
 		typedQuery.setMaxResults(1);
 		
@@ -101,18 +101,7 @@ public class PetListItemHelper {
 		return	foundPets;
 	}
 	
-	//Backend method to find the pet by Owner from the database and return it
-	public List<PetList> searchForPetByOwner(String petOwner) {
-		// TODO Auto-generated method stub
-		EntityManager em = emfactory.createEntityManager();
-		em.getTransaction().begin();
-		TypedQuery<PetList>	typedQuery	=	em.createQuery("select	li	from PetList li where "
-				+ " li.owner = :selectedOwner", PetList.class);
-		typedQuery.setParameter("selectedOwner", petOwner);
-		List<PetList>	foundPets = typedQuery.getResultList();
-		em.close();
-		return	foundPets;
-	}
+	
 	
 	//Backend method to close the database connection
 	public void cleanUp() {
