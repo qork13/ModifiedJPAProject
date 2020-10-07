@@ -35,13 +35,12 @@ public class EditPetServlet extends HttpServlet {
 				
 		String type = request.getParameter("type");
 		String name = request.getParameter("name");
-		String owner = request.getParameter("owner");
+		
 				
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		PetList petToUpdate = dao.searchForPetById(tempId);
 		petToUpdate.setType(type);
 		petToUpdate.setName(name);
-		petToUpdate.setOwner(owner);
 		dao.updatePetItem(petToUpdate);
 				
 		getServletContext().getRequestDispatcher("/viewAllPetsServlet").forward(request, response);

@@ -33,10 +33,10 @@ public class AddPetsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String type = request.getParameter("type");
 		String name = request.getParameter("name");
-		String owner = request.getParameter("owner");
+		
 	
 	//Send type, name and owner to constructor in PetList.java
-		PetList li = new PetList(type, name, owner);
+		PetList li = new PetList(type, name);
 		
 	//Sent record to PetListItemHelper to write to the mysql AWS database and commit the record
 		PetListItemHelper dao = new PetListItemHelper();
